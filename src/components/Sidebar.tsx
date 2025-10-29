@@ -23,43 +23,43 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
   };
 
   return (
-    <aside 
+    <aside
       className={`bg-[#0f1729] border-r border-white/5 flex flex-col py-6 h-screen fixed left-0 top-0 z-50 transition-all duration-300 ${
-        isExpanded ? 'w-[200px] px-4' : 'w-[72px] px-4'
-      }`}
-    >
+      isExpanded ? 'w-[200px] px-4' : 'w-[72px] px-4'}`
+      }>
+
       {/* Toggle Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute -right-3 top-6 w-6 h-6 rounded-full bg-[#0f1729] border border-white/10 flex items-center justify-center text-white hover:bg-white/5 transition-colors"
-      >
+        className="absolute -right-3 top-6 w-6 h-6 rounded-full bg-[#0f1729] border border-white/10 flex items-center justify-center text-white hover:bg-white/5 transition-colors">
+
         {isExpanded ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
       </button>
 
       {/* Logo & User Info */}
       <div className="mb-6">
         <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto">
-          <img 
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/FINAL_LOGO_BUDHI_AI_WHITE-02-1761722272977.png" 
+          <img
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/FINAL_LOGO_BUDHI_AI_WHITE-02-1761722272977.png"
             alt="Budhi AI"
-            className="w-10 h-10 rounded-xl object-contain"
-          />
+            className="rounded-xl object-contain !w-full !h-full !max-w-full" />
+
         </div>
-        {isExpanded && (
-          <div className="mt-3 text-center">
+        {isExpanded &&
+        <div className="mt-3 text-center">
             <p className="text-white text-sm font-medium">Budhi AI</p>
             <p className="text-gray-400 text-xs">budhi.ai@demo.com</p>
           </div>
-        )}
+        }
       </div>
 
       {/* Add Button */}
       <Button
         onClick={onAddNote}
         className={`bg-red-500 hover:bg-red-600 text-white font-medium rounded-full mb-4 ${
-          isExpanded ? 'w-full' : 'w-11 h-11 p-0'
-        }`}
-      >
+        isExpanded ? 'w-full' : 'w-11 h-11 p-0'}`
+        }>
+
         <Plus className={isExpanded ? "w-5 h-5 mr-2" : "w-5 h-5"} />
         {isExpanded && "Add"}
       </Button>
@@ -79,8 +79,8 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
                   r="20"
                   fill="none"
                   stroke="rgba(255,255,255,0.1)"
-                  strokeWidth="4"
-                />
+                  strokeWidth="4" />
+
                 <circle
                   cx="24"
                   cy="24"
@@ -90,23 +90,23 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
                   strokeWidth="4"
                   strokeDasharray="126"
                   strokeDashoffset="38"
-                  strokeLinecap="round"
-                />
+                  strokeLinecap="round" />
+
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-white text-sm font-bold">30</span>
               </div>
             </div>
             
-            {isExpanded && (
-              <div>
+            {isExpanded &&
+            <div>
                 <div className="flex items-center gap-1 mb-1">
                   <div className="w-3 h-3 rounded-full bg-amber-500"></div>
                   <span className="text-white text-xs font-medium">Free Plan</span>
                 </div>
                 <p className="text-gray-400 text-xs">100 Memos left this month</p>
               </div>
-            )}
+            }
           </div>
         </div>
       </div>
@@ -116,30 +116,30 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
         <Button
           variant="ghost"
           onClick={toggleDarkMode}
-          className={`text-white hover:bg-white/5 ${isExpanded ? 'flex-1 justify-start' : 'w-11 h-11 p-0 mx-auto'} rounded-full`}
-        >
+          className={`text-white hover:bg-white/5 ${isExpanded ? 'flex-1 justify-start' : 'w-11 h-11 p-0 mx-auto'} rounded-full`}>
+
           {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           {isExpanded && <span className="ml-2 text-sm">{isDark ? 'Light' : 'Dark'}</span>}
         </Button>
         
-        {!isExpanded && (
-          <Button
-            variant="ghost"
-            className="w-11 h-11 p-0 mx-auto text-white hover:bg-white/5 rounded-full"
-          >
+        {!isExpanded &&
+        <Button
+          variant="ghost"
+          className="w-11 h-11 p-0 mx-auto text-white hover:bg-white/5 rounded-full">
+
             <LogOut className="w-5 h-5" />
           </Button>
-        )}
+        }
         
-        {isExpanded && (
-          <Button
-            variant="ghost"
-            className="text-white hover:bg-white/5 rounded-full"
-          >
+        {isExpanded &&
+        <Button
+          variant="ghost"
+          className="text-white hover:bg-white/5 rounded-full">
+
             <LogOut className="w-4 h-4" />
           </Button>
-        )}
+        }
       </div>
-    </aside>
-  );
+    </aside>);
+
 }
