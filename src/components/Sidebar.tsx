@@ -40,7 +40,7 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
       <div className="mb-6">
         <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto">
           <img 
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/apple-touch-icon-1761721614039.png" 
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/FINAL_LOGO_BUDHI_AI_WHITE-02-1761722272977.png" 
             alt="Budhi AI"
             className="w-10 h-10 rounded-xl object-contain"
           />

@@ -277,7 +277,7 @@ export default function Home() {
         size="icon"
       >
         <img 
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/FINAL_LOGO_BUDHI_AI_WHITE-02-1761721606139.png"
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/FINAL_LOGO_BUDHI_AI_WHITE-02-1761722272977.png"
           alt="Ask Budhi AI"
           className="w-10 h-10 object-contain group-hover:scale-110 transition-transform"
         />
