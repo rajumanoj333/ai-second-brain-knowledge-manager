@@ -40,7 +40,7 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
         <div className="mb-6">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto" style={{ backgroundColor: 'var(--budhi-blue)' }}>
             <img 
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1761723148689.png" 
+              src="" 
               alt="Budhi"
               className="w-8 h-8 object-contain"
             />
