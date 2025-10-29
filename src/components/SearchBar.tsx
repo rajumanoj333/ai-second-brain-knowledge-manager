@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, X, List, Grid3x3, LayoutGrid, User, Settings, Bell, LogOut, Table } from "lucide-react";
+import { Search, X, List, Grid3x3, LayoutGrid, User, Settings, Bell, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -15,13 +15,12 @@ import { useRouter } from "next/navigation";
 const filterTabs = ["All", "Notes", "Articles", "Youtube", "Images", "Documents"];
 
 interface SearchBarProps {
-  onViewChange?: (view: "grid" | "list" | "masonry" | "table") => void;
-  currentView?: "grid" | "list" | "masonry" | "table";
-  onFilterChange?: (filter: string) => void;
-  activeFilter?: string;
+  onViewChange?: (view: "grid" | "list" | "masonry") => void;
+  currentView?: "grid" | "list" | "masonry";
 }
 
-export default function SearchBar({ onViewChange, currentView = "masonry", onFilterChange, activeFilter = "All" }: SearchBarProps) {
+export default function SearchBar({ onViewChange, currentView = "masonry" }: SearchBarProps) {
+  const [activeTab, setActiveTab] = useState("All");
   const [searchValue, setSearchValue] = useState("");
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const router = useRouter();
@@ -125,9 +124,9 @@ export default function SearchBar({ onViewChange, currentView = "masonry", onFil
           {filterTabs.map((tab) => (
             <button
               key={tab}
-              onClick={() => onFilterChange?.(tab)}
+              onClick={() => setActiveTab(tab)}
               className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${
-                activeFilter === tab
+                activeTab === tab
                   ? "bg-background text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
@@ -143,21 +142,9 @@ export default function SearchBar({ onViewChange, currentView = "masonry", onFil
             variant="ghost"
             size="icon"
             className={`h-8 w-8 ${
-              currentView === "table" ? "bg-background shadow-sm" : ""
-            }`}
-            onClick={() => onViewChange?.("table")}
-            title="Table View"
-          >
-            <Table className="w-4 h-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className={`h-8 w-8 ${
               currentView === "list" ? "bg-background shadow-sm" : ""
             }`}
             onClick={() => onViewChange?.("list")}
-            title="List View"
           >
             <List className="w-4 h-4" />
           </Button>
@@ -168,7 +155,6 @@ export default function SearchBar({ onViewChange, currentView = "masonry", onFil
               currentView === "grid" ? "bg-background shadow-sm" : ""
             }`}
             onClick={() => onViewChange?.("grid")}
-            title="Grid View"
           >
             <Grid3x3 className="w-4 h-4" />
           </Button>
@@ -179,7 +165,6 @@ export default function SearchBar({ onViewChange, currentView = "masonry", onFil
               currentView === "masonry" ? "bg-background shadow-sm" : ""
             }`}
             onClick={() => onViewChange?.("masonry")}
-            title="Masonry View"
           >
             <LayoutGrid className="w-4 h-4" />
           </Button>
