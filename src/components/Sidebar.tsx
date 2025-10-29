@@ -38,11 +38,11 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
       <div className="flex-1 space-y-4">
         {/* Logo & User Info */}
         <div className="mb-6">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mx-auto">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto" style={{ backgroundColor: 'var(--budhi-blue)' }}>
             <img 
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/apple-touch-icon-1761722780488.png" 
+              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1761723148689.png" 
               alt="Budhi"
-              className="w-6 h-6"
+              className="w-8 h-8 object-contain"
             />
           </div>
           {isExpanded && (
@@ -56,7 +56,8 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
         {/* Add Note Button */}
         <Button
           onClick={onAddNote}
-          className="w-full bg-red-500 hover:bg-red-600 text-white flex items-center gap-2 justify-center"
+          className="w-full text-white flex items-center gap-2 justify-center"
+          style={{ backgroundColor: 'var(--budhi-amber)' }}
         >
           <Plus className="w-5 h-5" />
           {isExpanded && <span>Add</span>}
@@ -92,11 +93,10 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
                       cx="24"
                       cy="24"
                       r="20"
-                      stroke="currentColor"
+                      stroke="var(--budhi-amber)"
                       strokeWidth="4"
                       fill="none"
                       strokeDasharray={`${(30 / 100) * 125.6} 125.6`}
-                      className="text-amber-500"
                     />
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -124,11 +124,10 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
                     cx="20"
                     cy="20"
                     r="16"
-                    stroke="currentColor"
+                    stroke="var(--budhi-amber)"
                     strokeWidth="3"
                     fill="none"
                     strokeDasharray={`${(30 / 100) * 100.48} 100.48`}
-                    className="text-amber-500"
                   />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">

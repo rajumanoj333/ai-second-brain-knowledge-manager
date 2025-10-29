@@ -9,7 +9,6 @@ import ContentDetailView from "@/components/ContentDetailView";
 import VoiceMessageBubble from "@/components/VoiceMessageBubble";
 import MasonryGrid, { MasonryItem } from "@/components/MasonryGrid";
 import { ContentType } from "@/components/ContentCard";
-import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ContentItem {
@@ -148,13 +147,14 @@ export default function Home() {
       {/* Floating Ask Button - Centered */}
       <Button
         onClick={() => setIsAskOpen(true)}
-        className="fixed bottom-8 left-1/2 -translate-x-1/2 h-16 w-16 rounded-full shadow-2xl bg-gradient-to-br from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white z-40 group"
+        className="fixed bottom-8 left-1/2 -translate-x-1/2 h-16 w-16 rounded-full shadow-2xl text-white z-40 group hover:scale-110 transition-all"
         size="icon"
+        style={{ backgroundColor: 'var(--budhi-amber)' }}
       >
         <img 
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/apple-touch-icon-1761722780488.png" 
           alt="Ask"
-          className="w-8 h-8 group-hover:scale-110 transition-transform"
+          className="w-9 h-9 group-hover:scale-110 transition-transform"
         />
       </Button>
 
