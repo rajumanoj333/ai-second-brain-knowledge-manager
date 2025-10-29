@@ -68,7 +68,7 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
             variant="ghost"
             className="w-full justify-start text-sm"
           >
-            MyBudhi
+            Budhi
           </Button>
         )}
 
