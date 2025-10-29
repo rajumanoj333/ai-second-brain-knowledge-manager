@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, LogOut, Sun, Moon, ChevronLeft, ChevronRight, Brain } from "lucide-react";
+import { Plus, LogOut, Sun, Moon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
@@ -38,8 +38,12 @@ export default function Sidebar({ onAddNote }: SidebarProps) {
 
       {/* Logo & User Info */}
       <div className="mb-6">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mx-auto">
-          <Brain className="w-6 h-6 text-white" />
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto">
+          <img 
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/apple-touch-icon-1761721614039.png" 
+            alt="Budhi AI"
+            className="w-10 h-10 rounded-xl object-contain"
+          />
         </div>
         {isExpanded && (
           <div className="mt-3 text-center">
