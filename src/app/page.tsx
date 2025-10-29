@@ -145,13 +145,17 @@ export default function Home() {
         </main>
       </div>
 
-      {/* Floating Ask Button */}
+      {/* Floating Ask Button - Centered */}
       <Button
         onClick={() => setIsAskOpen(true)}
-        className="fixed bottom-8 right-8 h-16 w-16 rounded-full shadow-2xl bg-gradient-to-br from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white z-40 group"
+        className="fixed bottom-8 left-1/2 -translate-x-1/2 h-16 w-16 rounded-full shadow-2xl bg-gradient-to-br from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white z-40 group"
         size="icon"
       >
-        <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
+        <img 
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/apple-touch-icon-1761722780488.png" 
+          alt="Ask"
+          className="w-8 h-8 group-hover:scale-110 transition-transform"
+        />
       </Button>
 
       {/* Add Note Modal */}
